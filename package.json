@@ -1,0 +1,12 @@
+{
+    "name": "tbdmud",
+    "version": "0.0.1",
+    "author": "Evan Brown <evbrown@morphotrust.com>",
+    "description": "Just a quick little chat/game that persists in a couchbase document bucket",
+    "dependencies": {
+        "net": "*",
+        "couchbase": "*",
+        "events": "*"
+    },
+    "license": "MIT"
+}
