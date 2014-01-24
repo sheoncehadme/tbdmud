@@ -6,7 +6,7 @@
     "dependencies": {
         "net": "*",
         "couchbase": "*",
-        "events": "*"
+        "turbine.js": "*"
     },
     "license": "MIT"
 }
