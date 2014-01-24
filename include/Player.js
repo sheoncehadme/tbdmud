@@ -1,8 +1,22 @@
-var player = {
-    id: 'someuuid',
-    name: 'asdf',
-    description: 'agag',
-    connection_state: 'login'
-};
+function Player(s) {
+     if (false === (this instanceof Login)) {
+        return new Login();
+    }
+    this.id = '';
+    this.socket = s;
+    this.playerData = { name: s.name};
+}
 
-exports.player = player;
+Player.prototype.getSocket = function(){
+    return this.socket;
+}
+
+Player.prototype.getId = function(){
+    return this.id;
+}
+
+Player.prototype.getPlayerData = function(){
+    return this.playerData;
+}
+
+exports.Player = Player;

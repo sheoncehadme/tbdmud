@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 var net = require('net');
 var UserAuth = require('./include/UserAuth').UserAuth;
-var player = require('./include/player_object').player;
 var eventhandler = require('./events/eventhandler').Events;
 var utils = require('./include/utils').utils;
 
@@ -12,13 +11,13 @@ var clients = [];
 net.createServer(function(socket) {
     // Send a nice welcome message and announce
     socket.write(UserAuth.motd());
-    socket.player_state = 'login';
+    socket.state = 'login';
 
     // Handle incoming messages from clients.
     socket.on('data', function(data) {
         var input = data.toString('utf-8').trim();
         //verify players connection state
-        switch (socket.player_state) {
+        switch (socket.state) {
             case 'login':
                 var name = input;
                 socket.name = name;
