@@ -14,6 +14,7 @@ var UserAuth = {
         }, function(err){
             if (err) {
                 console.log('DB Connection Error', err);
+                socket.emit('dberror', socket);
             } else {
                 console.log('DB Connected');
             }

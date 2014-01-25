@@ -44,9 +44,11 @@ net.createServer(function(socket) {
         }
     });
     
-    //bind login events
-    for (var event in eventhandler.Login){
-        socket.on(event, eventhandler.Login[event]);
+    //bind all events
+    for (var events in eventhandler){
+        for (var event in eventhandler[events]){
+            socket.on(event, eventhandler[events][event]);
+        }
     }
 
     //Remove the client from the list when it leaves
