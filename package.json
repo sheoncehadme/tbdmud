@@ -1,12 +1,13 @@
 {
     "name": "tbdmud",
     "version": "0.0.1",
-    "author": "Evan Brown <evbrown@morphotrust.com>",
+    "author": "Evan Brown <noggin@gmail.com>",
     "description": "Just a quick little chat/game that persists in a couchbase document bucket",
     "dependencies": {
         "net": "*",
         "couchbase": "*",
-        "turbine.js": "*"
+        "turbine.js": "*",
+        "node-uuid": "*"
     },
     "license": "MIT"
 }

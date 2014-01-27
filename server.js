@@ -11,13 +11,14 @@ var clients = [];
 net.createServer(function(socket) {
     // Send a nice welcome message and announce
     socket.write(UserAuth.motd());
-    socket.state = 'login';
+    socket.player_state = 'login';
 
     // Handle incoming messages from clients.
     socket.on('data', function(data) {
         var input = data.toString('utf-8').trim();
+        console.log(socket.uuid);
         //verify players connection state
-        switch (socket.state) {
+        switch (socket.player_state) {
             case 'login':
                 var name = input;
                 socket.name = name;
